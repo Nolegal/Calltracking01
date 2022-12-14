@@ -8,8 +8,8 @@ import java.util.concurrent.TimeUnit;
 
 public class MainClass {
     public static void main(String[] args) throws InterruptedException {
-           System.setProperty("webdriver.chrome.driver", "/Users/setininoleksandrvaceslavovic/IdeaProjects/untitled5/drivers/chromedriver 4");
-
+           System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver 4");
+       // System.setProperty("webdriver.chrome.driver", "/Users/setininoleksandrvaceslavovic/IdeaProjects/untitled5/drivers/chromedriver 4");
 
            WebDriver driver = new ChromeDriver();
 
