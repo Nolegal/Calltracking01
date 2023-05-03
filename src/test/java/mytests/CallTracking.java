@@ -1,15 +1,18 @@
+package mytests;
+
 import io.github.bonigarcia.wdm.WebDriverManager;
-import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.testng.annotations.Test;
 
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class MainClass {
-    public static void main(String[] args) throws InterruptedException {
+public class CallTracking {
+    @Test
+    public static void callTracking01() throws InterruptedException {
          //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
        // System.setProperty("webdriver.chrome.driver", "/Users/setininoleksandrvaceslavovic/IdeaProjects/untitled5/drivers/chromedriver 4");
         WebDriverManager.chromedriver().setup();
@@ -18,7 +21,7 @@ public class MainClass {
         WebDriver driver;
 
         ChromeOptions options = new ChromeOptions();
-       options.addArguments("headless");
+      // options.addArguments("headless");
         driver=new ChromeDriver(options);
 
         driver.manage().window().maximize();
