@@ -21,7 +21,7 @@ public class CallTracking {
         WebDriver driver;
 
         ChromeOptions options = new ChromeOptions();
-      // options.addArguments("headless");
+       options.addArguments("headless");
         driver=new ChromeDriver(options);
 
         driver.manage().window().maximize();
