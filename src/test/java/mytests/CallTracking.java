@@ -16,13 +16,13 @@ public class CallTracking {
          //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
        // System.setProperty("webdriver.chrome.driver", "/Users/setininoleksandrvaceslavovic/IdeaProjects/untitled5/drivers/chromedriver 4");
         WebDriverManager.chromedriver().setup();
-          // WebDriver driver = new ChromeDriver();
+          WebDriver driver = new ChromeDriver();
 
-        WebDriver driver;
+       // WebDriver driver;
 
-        ChromeOptions options = new ChromeOptions();
-       options.addArguments("headless");
-        driver=new ChromeDriver(options);
+       // ChromeOptions options = new ChromeOptions();
+       //options.addArguments("headless");
+       // driver=new ChromeDriver(options);
 
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
