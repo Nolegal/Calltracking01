@@ -27,8 +27,15 @@ public class CallTracking {
        //   WebDriver driver = new RemoteWebDriver(new URL("http://10.0.1.114:9090/"),capabilities);
 
         //WebDriver driver= new ChromeDriver();
-        DesiredCapabilities desc = DesiredCapabilities.chrome();
-        WebDriver driver= new RemoteWebDriver(new URL("http://10.0.1.114:1234/wd/hub"),desc);
+        //DesiredCapabilities desc = DesiredCapabilities.chrome();
+        //WebDriver driver= new RemoteWebDriver(new URL("http://10.0.1.114:1234/wd/hub"),desc);
+
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.setCapability("browserVersion", "112");
+        chromeOptions.setCapability("platformName", "Linux");
+        WebDriver driver = new RemoteWebDriver(new URL("http://10.0.1.114:1234"), chromeOptions);
+
+
 
 
 
