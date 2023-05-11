@@ -3,12 +3,12 @@ package mytests;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
-import org.openqa.selenium.remote.RemoteWebDriver;
+
 import org.testng.annotations.Test;
 
 import java.net.MalformedURLException;
-import java.net.URL;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
@@ -27,21 +27,21 @@ public class CallTracking {
         //DesiredCapabilities desc = DesiredCapabilities.chrome();
         //WebDriver driver= new RemoteWebDriver(new URL("http://10.0.1.114:1234/wd/hub"),desc);
 
-        ChromeOptions chromeOptions = new ChromeOptions();
-        chromeOptions.setCapability("browserVersion", "112");
-        chromeOptions.setCapability("platformName", "Linux");
-        WebDriver driver = new RemoteWebDriver(new URL("http://10.0.1.114:1234/wd/hub"), chromeOptions);
+       // ChromeOptions chromeOptions = new ChromeOptions();
+        //chromeOptions.setCapability("browserVersion", "112");
+       // chromeOptions.setCapability("platformName", "Linux");
+        //WebDriver driver = new RemoteWebDriver(new URL("http://10.0.1.114:1234/wd/hub"), chromeOptions);
 
 
 
 
 
 
-       // WebDriver driver;
+        WebDriver driver;
 
-       // ChromeOptions options = new ChromeOptions();
-       //options.addArguments("headless");
-       // driver=new ChromeDriver(options);
+        ChromeOptions options = new ChromeOptions();
+       options.addArguments("headless");
+        driver= new ChromeDriver(options);
 
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
@@ -72,7 +72,7 @@ public class CallTracking {
 // System.out.println(driver.getTitle());
 
 driver.quit();*/
-      /*  driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=anything");
+        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=anything");
         ((JavascriptExecutor)driver).executeScript("window.open()");
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
@@ -81,13 +81,44 @@ driver.quit();*/
         ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(2));
         driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
-          */
+        ((JavascriptExecutor)driver).executeScript("window.open()");
+        ArrayList<String> tabs3 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(3));
+        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
+        ((JavascriptExecutor)driver).executeScript("window.open()");
+        ArrayList<String> tabs4 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(4));
+        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
+        ((JavascriptExecutor)driver).executeScript("window.open()");
+        ArrayList<String> tabs5 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(5));
+        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
+        ((JavascriptExecutor)driver).executeScript("window.open()");
+        ArrayList<String> tabs6 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(6));
+        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
+        ((JavascriptExecutor)driver).executeScript("window.open()");
+        ArrayList<String> tabs7 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(7));
+        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
+        ((JavascriptExecutor)driver).executeScript("window.open()");
+        ArrayList<String> tabs8 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(8));
+        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
+        ((JavascriptExecutor)driver).executeScript("window.open()");
+        ArrayList<String> tabs9 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(9));
+        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
+        ((JavascriptExecutor)driver).executeScript("window.open()");
+        ArrayList<String> tabs10 = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs2.get(10));
+        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
 
 
 
-        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=anything");
-        driver.wait(7000);
-        driver.close();
+        //driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=anything");
+       // driver.wait(7000);
+       // driver.close();
        // driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=organic");
       //  driver.wait(7000);
         //driver.close();
