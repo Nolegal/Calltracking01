@@ -72,7 +72,7 @@ public class CallTracking {
 // System.out.println(driver.getTitle());
 
 driver.quit();*/
-        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=anything");
+      /*  driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=anything");
         ((JavascriptExecutor)driver).executeScript("window.open()");
         ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs.get(1));
@@ -81,13 +81,13 @@ driver.quit();*/
         ArrayList<String> tabs2 = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs2.get(2));
         driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
+          */
 
 
 
-
-       // driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=anything");
-       // driver.wait(7000);
-        //driver.close();
+        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=anything");
+        driver.wait(7000);
+        driver.close();
        // driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=organic");
       //  driver.wait(7000);
         //driver.close();
