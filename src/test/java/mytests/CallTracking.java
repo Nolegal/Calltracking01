@@ -33,7 +33,7 @@ public class CallTracking {
         ChromeOptions chromeOptions = new ChromeOptions();
         chromeOptions.setCapability("browserVersion", "112");
         chromeOptions.setCapability("platformName", "Linux");
-        WebDriver driver = new RemoteWebDriver(new URL("http://10.0.1.114:1234"), chromeOptions);
+        WebDriver driver = new RemoteWebDriver(new URL("http://10.0.1.114:1234/wd/hub"), chromeOptions);
 
 
 
