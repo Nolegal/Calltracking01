@@ -17,7 +17,7 @@ public class CallTracking {
     public static void callTracking01() throws InterruptedException, MalformedURLException {
            System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
        // System.setProperty("webdriver.chrome.driver", "/Users/setininoleksandrvaceslavovic/IdeaProjects/untitled5/drivers/chromedriver 4");
-        //WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().setup();
         //DesiredCapabilities capabilities = new DesiredCapabilities();
       //  capabilities.setBrowserName("chrome");
        // capabilities.setVersion("112.0");
