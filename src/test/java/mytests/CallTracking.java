@@ -84,7 +84,7 @@ driver.quit();*/
         ((JavascriptExecutor)driver).executeScript("window.open()");
         ArrayList<String> tabs3 = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs3.get(3));
-       /driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
+        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
         ((JavascriptExecutor)driver).executeScript("window.open()");
         ArrayList<String> tabs4 = new ArrayList<String>(driver.getWindowHandles());
         driver.switchTo().window(tabs4.get(4));
