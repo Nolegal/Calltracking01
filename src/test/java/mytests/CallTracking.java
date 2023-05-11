@@ -5,18 +5,33 @@ import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
+import org.openqa.selenium.remote.DesiredCapabilities;
+import org.openqa.selenium.remote.RemoteWebDriver;
 import org.testng.annotations.Test;
 
+import javax.security.auth.login.Configuration;
+import java.net.MalformedURLException;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class CallTracking {
     @Test
-    public static void callTracking01() throws InterruptedException {
+    public static void callTracking01() throws InterruptedException, MalformedURLException {
          //  System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
        // System.setProperty("webdriver.chrome.driver", "/Users/setininoleksandrvaceslavovic/IdeaProjects/untitled5/drivers/chromedriver 4");
         WebDriverManager.chromedriver().setup();
-          WebDriver driver = new ChromeDriver();
+        //DesiredCapabilities capabilities = new DesiredCapabilities();
+      //  capabilities.setBrowserName("chrome");
+       // capabilities.setVersion("112.0");
+       //   WebDriver driver = new RemoteWebDriver(new URL("http://10.0.1.114:9090/"),capabilities);
+
+        //WebDriver driver= new ChromeDriver();
+        DesiredCapabilities desc = DesiredCapabilities.chrome();
+        WebDriver driver= new RemoteWebDriver(new URL("http://10.0.1.114:1234/wd/hub"),desc);
+
+
+
 
        // WebDriver driver;
 
