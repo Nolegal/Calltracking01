@@ -1,54 +1,65 @@
 package mytests;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
 import org.testng.annotations.Test;
-
+import org.testng.annotations.DataProvider
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
 public class CallTracking {
-    @Test
-    public static void callTracking01() throws InterruptedException, MalformedURLException {
-           //System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
-       // System.setProperty("webdriver.chrome.driver", "/Users/setininoleksandrvaceslavovic/IdeaProjects/untitled5/drivers/chromedriver 4");
+    @Test(dataProvider = "testdata")
+    public static void callTracking01(String name, String mail, String phone) throws InterruptedException, MalformedURLException {
+        //System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
+        //System.setProperty("webdriver.chrome.driver", "/Users/setininoleksandrvaceslavovic/IdeaProjects/untitled5/drivers/chromedriver 4");
         WebDriverManager.chromedriver().setup();
         //DesiredCapabilities capabilities = new DesiredCapabilities();
-      //  capabilities.setBrowserName("chrome");
-       // capabilities.setVersion("112.0");
-       //   WebDriver driver = new RemoteWebDriver(new URL("http://10.0.1.114:9090/"),capabilities);
+        //  capabilities.setBrowserName("chrome");
+        // capabilities.setVersion("112.0");
+        //   WebDriver driver = new RemoteWebDriver(new URL("http://10.0.1.114:9090/"),capabilities);
 
-        //WebDriver driver= new ChromeDriver();
+       //WebDriver driver = new ChromeDriver();
         //DesiredCapabilities desc = DesiredCapabilities.chrome();
         //WebDriver driver= new RemoteWebDriver(new URL("http://10.0.1.114:1234/wd/hub"),desc);
 
-       // ChromeOptions chromeOptions = new ChromeOptions();
+        // ChromeOptions chromeOptions = new ChromeOptions();
         //chromeOptions.setCapability("browserVersion", "112");
-       // chromeOptions.setCapability("platformName", "Linux");
+        // chromeOptions.setCapability("platformName", "Linux");
         //WebDriver driver = new RemoteWebDriver(new URL("http://10.0.1.114:1234/wd/hub"), chromeOptions);
-
-
-
-
 
 
         WebDriver driver;
 
         ChromeOptions options = new ChromeOptions();
-       options.addArguments("headless");
-        driver= new ChromeDriver(options);
+        options.addArguments("headless");
+        driver = new ChromeDriver(options);
 
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-        driver.manage().timeouts().implicitlyWait(30,TimeUnit.SECONDS);
+        driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
+        driver.get("https://www.calltracking.ru");
+        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/header[1]/div[1]/div[1]/div[1]/nav[1]/div[2]/div[1]/button[1]")).click();
+        driver.findElement(By.className("demo_access_form")).findElement(By.id("first_step_name")).click();
+        driver.findElement(By.className("demo_access_form")).findElement(By.id("first_step_name")).sendKeys(name);
 
-      //  driver.get("https://www.calltracking.ru");
+        driver.findElement(By.className("demo_access_form")).findElement(By.className("email_validation")).click();
+        driver.findElement(By.className("demo_access_form")).findElement(By.className("email_validation")).sendKeys(mail);
+
+        driver.findElement(By.className("demo_access_form")).findElement(By.className("phone_validation")).click();
+        driver.findElement(By.className("demo_access_form")).findElement(By.className("phone_validation")).sendKeys(phone);
+
+        driver.findElement(By.className("demo_access_form")).findElement(By.className("btn-white")).click();
+
+
+
+        //  driver.get("https://www.calltracking.ru");
 
     /*    driver.findElement(By.xpath("/html[1]/body[1]/div[1]/header[1]/div[1]/div[1]/div[1]/nav[1]/div[2]/div[1]/button[1]")).click();
 
@@ -280,41 +291,43 @@ driver.quit();
      */
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
+        //driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
         //driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=anything");
-       // driver.wait(7000);
-        driver.close();
-        driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=organic");
-      //  driver.wait(7000);
-        driver.close();
-       // driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
-       // driver.wait(7000);
+        // driver.wait(7000);
         //driver.close();
-
+        // driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=organic");
+        //  driver.wait(7000);
+        // driver.quit();
+        // driver.get("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=cpc");
+        // driver.wait(7000);
+        //driver.close();
 
 
     }
 
+
+
+
+    @DataProvider(name = "testdata")
+    public Object[][] TestDataFeed () {
+
+// Create object array with 2 rows and 2 column- first parameter is row and second is //column
+        Object[][] calltrackingdata = new Object[2][3];
+
+// Enter data to row 0 column 0
+        calltrackingdata[0][0] = "Тест";
+// Enter data to row 0 column 1
+        calltrackingdata[0][1] = "test@i.ru";
+// Enter data to row 1 column 0
+        calltrackingdata[0][2] = "9623923920";
+
+
+        calltrackingdata[1][0] = "Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[1][1] = "test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[1][2] = "9623923921";
+        return calltrackingdata;
+    }
 
 }
