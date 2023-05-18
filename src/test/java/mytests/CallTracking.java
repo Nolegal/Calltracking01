@@ -639,6 +639,15 @@ driver.quit();
         calltrackingdata[32][3]="Да";
 
 
+        calltrackingdata[33][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[33][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[33][2]="+389623920033";
+
+        calltrackingdata[33][3]="Да";
+
+
         calltrackingdata[34][0]="Тест";
 // Enter data to row 1 column 0
         calltrackingdata[34][1]="test@i.ru";
