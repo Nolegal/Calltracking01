@@ -7,18 +7,33 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
+import org.testng.annotations.AfterClass;
 import org.testng.annotations.Test;
 import org.testng.annotations.DataProvider;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
 
-public class CallTracking {
+public class CallTracking extends BaseClass{
+
+
+    public CallTracking(){
+        super();
+
+    }
+
+    @AfterClass
+    public static void closeBrowser(){
+        driver.quit();
+
+        driver=null;
+    }
+
     @Test(dataProvider = "testdata")
-    public static void callTracking01(String name, String mail, String phone) throws InterruptedException, MalformedURLException {
+    public static void callTracking01(String name, String email, String phone,String text) throws InterruptedException, MalformedURLException {
         //System.setProperty("webdriver.chrome.driver", "/usr/bin/chromedriver");
         //System.setProperty("webdriver.chrome.driver", "/Users/setininoleksandrvaceslavovic/IdeaProjects/untitled5/drivers/chromedriver 4");
-        WebDriverManager.chromedriver().setup();
+       // WebDriverManager.chromedriver().setup();
         //DesiredCapabilities capabilities = new DesiredCapabilities();
         //  capabilities.setBrowserName("chrome");
         // capabilities.setVersion("112.0");
@@ -34,28 +49,45 @@ public class CallTracking {
         //WebDriver driver = new RemoteWebDriver(new URL("http://10.0.1.114:1234/wd/hub"), chromeOptions);
 
 
-        WebDriver driver;
 
-        ChromeOptions options = new ChromeOptions();
-        options.addArguments("headless");
-        driver = new ChromeDriver(options);
 
         //driver.manage().window().maximize();
         //driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
         //driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
         //driver.manage().timeouts().pageLoadTimeout(30, TimeUnit.SECONDS);
-        driver.get("https://www.calltracking.ru");
-        driver.findElement(By.xpath("/html[1]/body[1]/div[1]/header[1]/div[1]/div[1]/div[1]/nav[1]/div[2]/div[1]/button[1]")).click();
-        driver.findElement(By.className("demo_access_form")).findElement(By.id("first_step_name")).click();
-        driver.findElement(By.className("demo_access_form")).findElement(By.id("first_step_name")).sendKeys(name);
 
-        driver.findElement(By.className("demo_access_form")).findElement(By.className("email_validation")).click();
-        driver.findElement(By.className("demo_access_form")).findElement(By.className("email_validation")).sendKeys(mail);
 
-        driver.findElement(By.className("demo_access_form")).findElement(By.className("phone_validation")).click();
-        driver.findElement(By.className("demo_access_form")).findElement(By.className("phone_validation")).sendKeys(phone);
 
-        driver.findElement(By.className("demo_access_form")).findElement(By.className("btn-white")).click();
+
+
+
+
+
+
+            navigateToURL("https://calltracking.ru/testqa/index.php?utm_source=google&utm_medium=anything");
+            JavascriptExecutor jse=(JavascriptExecutor) driver;
+            jse.executeScript("window.scrollBy(0,400)");
+
+            driver.findElement(By.xpath("//body/div[1]/form[1]/input[1]")).click();
+            driver.findElement(By.xpath("//body/div[1]/form[1]/input[1]")).sendKeys(name);
+
+            driver.findElement(By.xpath("//body/div[1]/form[1]/input[2]")).click();
+            driver.findElement(By.xpath("//body/div[1]/form[1]/input[2]")).sendKeys(email);
+
+            driver.findElement(By.xpath("//body/div[1]/form[1]/input[3]")).click();
+            driver.findElement(By.xpath("//body/div[1]/form[1]/input[3]")).sendKeys(phone);
+
+            driver.findElement(By.xpath("//body/div[1]/form[1]/textarea[1]")).click();
+            driver.findElement(By.xpath("//body/div[1]/form[1]/textarea[1]")).sendKeys(text);
+
+
+
+
+            driver.findElement (By.xpath ("//body/div[1]/form[1]/input[4]")).click();
+
+
+
+
 
 
 
@@ -306,28 +338,116 @@ driver.quit();
     }
 
 
-
-
-    @DataProvider(name = "testdata")
-    public Object[][] TestDataFeed () {
+    @DataProvider(name="testdata")
+    public Object[][] TestDataFeed(){
 
 // Create object array with 2 rows and 2 column- first parameter is row and second is //column
-        Object[][] calltrackingdata = new Object[2][3];
+        Object [][] calltrackingdata=new Object[10][4];
 
 // Enter data to row 0 column 0
-        calltrackingdata[0][0] = "Тест";
+        calltrackingdata[0][0]="Тест";
 // Enter data to row 0 column 1
-        calltrackingdata[0][1] = "test@i.ru";
+        calltrackingdata[0][1]="test@i.ru";
 // Enter data to row 1 column 0
-        calltrackingdata[0][2] = "9623923920";
+        calltrackingdata[0][2]="+389623920000";
+
+        calltrackingdata[0][3]="Нет";
 
 
-        calltrackingdata[1][0] = "Тест";
+        calltrackingdata[1][0]="Тест";
 // Enter data to row 1 column 0
-        calltrackingdata[1][1] = "test@i.ru";
+        calltrackingdata[1][1]="test@i.ru";
 // return arrayobject to testscript
-        calltrackingdata[1][2] = "9623923921";
+        calltrackingdata[1][2]="+389623923921";
+
+        calltrackingdata[1][3]="Да";
+
+
+        calltrackingdata[2][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[2][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[2][2]="+389623920002";
+
+        calltrackingdata[2][3]="Да";
+
+
+        calltrackingdata[3][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[3][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[3][2]="+389623920003";
+
+        calltrackingdata[3][3]="Да";
+
+
+        calltrackingdata[4][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[4][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[4][2]="+389623920004";
+
+        calltrackingdata[4][3]="Да";
+
+
+        calltrackingdata[5][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[5][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[5][2]="+389623920005";
+
+        calltrackingdata[5][3]="Да";
+
+
+        calltrackingdata[6][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[6][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[6][2]="+389623920006";
+
+        calltrackingdata[6][3]="Да";
+
+        calltrackingdata[7][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[7][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[7][2]="+389623920007";
+
+        calltrackingdata[7][3]="Да";
+
+
+        calltrackingdata[8][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[8][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[8][2]="+389623920008";
+
+        calltrackingdata[8][3]="Да";
+
+
+        calltrackingdata[9][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[9][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[9][2]="+389623920009";
+
+        calltrackingdata[9][3]="Да";
+
+
+
+
+
+
+
+
+
+
+
+
         return calltrackingdata;
     }
+
+
+
 
 }
