@@ -342,7 +342,7 @@ driver.quit();
     public Object[][] TestDataFeed(){
 
 // Create object array with 2 rows and 2 column- first parameter is row and second is //column
-        Object [][] calltrackingdata=new Object[20][4];
+        Object [][] calltrackingdata=new Object[30][4];
 
 // Enter data to row 0 column 0
         calltrackingdata[0][0]="Тест";
@@ -520,6 +520,98 @@ driver.quit();
         calltrackingdata[19][2]="+389623920019";
 
         calltrackingdata[19][3]="Да";
+
+
+        calltrackingdata[20][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[20][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[20][2]="+389623920020";
+
+        calltrackingdata[20][3]="Да";
+
+
+        calltrackingdata[21][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[21][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[21][2]="+389623920021";
+
+        calltrackingdata[21][3]="Да";
+
+
+        calltrackingdata[22][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[22][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[22][2]="+389623920022";
+
+        calltrackingdata[22][3]="Да";
+
+
+        calltrackingdata[23][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[23][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[23][2]="+389623920023";
+
+        calltrackingdata[23][3]="Да";
+
+
+        calltrackingdata[24][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[24][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[24][2]="+389623920024";
+
+        calltrackingdata[24][3]="Да";
+
+
+        calltrackingdata[25][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[25][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[25][2]="+389623920025";
+
+        calltrackingdata[25][3]="Да";
+
+
+        calltrackingdata[26][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[26][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[26][2]="+389623920026";
+
+        calltrackingdata[26][3]="Да";
+
+
+        calltrackingdata[27][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[27][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[27][2]="+389623920027";
+
+        calltrackingdata[27][3]="Да";
+
+
+        calltrackingdata[28][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[28][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[28][2]="+389623920028";
+
+        calltrackingdata[28][3]="Да";
+
+
+        calltrackingdata[29][0]="Тест";
+// Enter data to row 1 column 0
+        calltrackingdata[29][1]="test@i.ru";
+// return arrayobject to testscript
+        calltrackingdata[29][2]="+389623920022";
+
+        calltrackingdata[29][3]="Да";
+
+
 
 
 
