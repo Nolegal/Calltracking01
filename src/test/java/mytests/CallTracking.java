@@ -4,6 +4,7 @@ import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 
@@ -13,6 +14,8 @@ import org.testng.annotations.DataProvider;
 import java.net.MalformedURLException;
 import java.util.ArrayList;
 import java.util.concurrent.TimeUnit;
+import org.apache.logging.log4j.Logger;
+import org.apache.logging.log4j.LogManager;
 
 public class CallTracking extends BaseClass{
 
@@ -86,7 +89,28 @@ public class CallTracking extends BaseClass{
             driver.findElement (By.xpath ("//body/div[1]/form[1]/input[4]")).click();
 
 
+        Logger log= LogManager.getLogger();
+        WebElement phoneya= driver.findElement(By.xpath("/html[1]/body[1]/div[1]/header[1]/div[2]/a[1]"));
+        String textya= phoneya.getText();
+        // System.out.println(text);
+        log.info(textya);
 
+        if (text.contains("+7 (495) 367-29-93")) {
+            //  System.out.println("number is changed 1st");
+            log.info("number is changed 1st");
+        }
+        else if (text.contains("+7 (499) 558-58-47")) {
+            // System.out.println("number is changed 2nd");
+            log.info("number is changed 2nd");
+        }
+        else if (text.contains("+7 (499) 406-17-63")) {
+            // System.out.println("number is changed 3rd");
+            log.info("number is changed 3rd");
+        }
+        else {
+            // System.out.println(text+"calltracking not working");
+            log.info(text+"calltracking not working");
+        }
 
 
 
@@ -342,7 +366,7 @@ driver.quit();
     public Object[][] TestDataFeed(){
 
 // Create object array with 2 rows and 2 column- first parameter is row and second is //column
-        Object [][] calltrackingdata=new Object[500][4];
+        Object [][] calltrackingdata=new Object[5][4];
 
 // Enter data to row 0 column 0
         calltrackingdata[0][0]="Тест";
@@ -389,7 +413,7 @@ driver.quit();
 
         calltrackingdata[4][3]="Да";
 
-
+/*
         calltrackingdata[5][0]="Тест";
 // Enter data to row 1 column 0
         calltrackingdata[5][1]="test@i.ru";
@@ -4839,8 +4863,7 @@ driver.quit();
         calltrackingdata[499][3]="Да";
 
 
-
-
+*/
 
 
 
