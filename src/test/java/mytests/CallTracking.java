@@ -95,21 +95,21 @@ public class CallTracking extends BaseClass{
         // System.out.println(text);
         log.info(textya);
 
-        if (text.contains("+7 (495) 367-29-93")) {
+        if (textya.contains("+7 (495) 367-29-93")) {
             //  System.out.println("number is changed 1st");
             log.info("number is changed 1st");
         }
-        else if (text.contains("+7 (499) 558-58-47")) {
+        else if (textya.contains("+7 (499) 558-58-47")) {
             // System.out.println("number is changed 2nd");
             log.info("number is changed 2nd");
         }
-        else if (text.contains("+7 (499) 406-17-63")) {
+        else if (textya.contains("+7 (499) 406-17-63")) {
             // System.out.println("number is changed 3rd");
             log.info("number is changed 3rd");
         }
         else {
             // System.out.println(text+"calltracking not working");
-            log.info(text+"calltracking not working");
+            log.info(textya+"calltracking not working");
         }
 
 
